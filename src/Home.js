@@ -22,7 +22,8 @@ export const HomeScreen = ({route,navigation}) => {
         </Text>
         <Button title="Go to Details" onPress={()=> navigation.navigate('Details',{
             itemId:86,
-            otherParam:'anything you want here'
+            otherParam:'anything you want here',
+            name : 'Custom profile Header'
         })}>
             
         </Button>
