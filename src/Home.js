@@ -1,6 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
+import 'react-native-gesture-handler';
+
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+const Drawer = createDrawerNavigator();
+
+
 const Styles = StyleSheet.create(
     {
         title: {
@@ -15,7 +22,7 @@ const Styles = StyleSheet.create(
 )
 
 export const HomeScreen = ({route,navigation}) => {
-    const {itemId}=route.params
+   const {itemId}=route.params
     return (<View style={Styles.container}>
         <Text style={Styles.title}>
             Home Screen Item id : {JSON.stringify(itemId)}
@@ -29,7 +36,19 @@ export const HomeScreen = ({route,navigation}) => {
         </Button>
     </View>
     )
+
+    // return (
+    //     <Drawer.Navigator>
+    //         <Drawer.Screen name="Feed" component={Feed}/>
+    //         <Drawer.Screen name="Article" component={Article}/>
+    //     </Drawer.Navigator>
+    // )
+
 }
+
+export const Feed = () => (<Text>Feed Screen</Text>)
+
+const Article = () => (<Text>Article Screen</Text>)
 
 
 
