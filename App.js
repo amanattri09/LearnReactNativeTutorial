@@ -7,6 +7,7 @@ import { ReducerHook } from "./src/reducer_hook/ReducerHook";
 import CallbackHook from "./src/callback_hook/callback_hook";
 import asyncexample from "./src/async_libary_usage/asyncexample_using_ref_and_set_state";
 import asyncexampleUsingStorage from "./src/async_libary_usage/asyncexample_using_storage";
+import FetchExampleScreen from "./src/axio_library_example/FetchExample";
 
 const Stack = createNativeStackNavigator()
 
@@ -14,7 +15,7 @@ const Stack = createNativeStackNavigator()
 function App(){
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="asyncExample_using_storage">
+            <Stack.Navigator initialRouteName="fetch_example">
                 <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'My Home Titl' }} initialParams={{ itemId: 42 }} />
                 <Stack.Screen name="Details" component={DetailScreen} options={
                     ({ route }) => ({ title: route.params.name } )
@@ -23,6 +24,7 @@ function App(){
                 <Stack.Screen name="CallbackHooks" component={CallbackHook} />
                 <Stack.Screen name="asyncExample" component={asyncexample} />
                 <Stack.Screen name="asyncExample_using_storage" component={asyncexampleUsingStorage} />
+                <Stack.Screen name="fetch_example"   component={FetchExampleScreen} />
             </Stack.Navigator>
 
         </NavigationContainer>
