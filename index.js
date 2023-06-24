@@ -7,7 +7,8 @@ import App from './App';
 import PermissionScreen from './src/permission_example/permission'
 import DeepLinkScreen from './src/deeplinking/deeplinking'
 import Router  from './src/deeplinking/router'
+import animDefault  from './src/animation/animation'
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 
-AppRegistry.registerComponent(appName, () => Router);
+AppRegistry.registerComponent(appName, () => animDefault);
