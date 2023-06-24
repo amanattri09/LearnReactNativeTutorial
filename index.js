@@ -10,7 +10,8 @@ import Router  from './src/deeplinking/router'
 import animDefault  from './src/animation/animation'
 import animation_intraction_manager  from './src/animation/animation_intraction_manager'
 import animationLayoutAnimation  from './src/animation/animation_layout_animation'
+import iffeScreen  from './src/iffe/iffe'
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 
-AppRegistry.registerComponent(appName, () => animationLayoutAnimation);
+AppRegistry.registerComponent(appName, () => iffeScreen);
