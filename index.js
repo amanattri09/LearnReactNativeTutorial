@@ -9,7 +9,8 @@ import DeepLinkScreen from './src/deeplinking/deeplinking'
 import Router  from './src/deeplinking/router'
 import animDefault  from './src/animation/animation'
 import animation_intraction_manager  from './src/animation/animation_intraction_manager'
+import animationLayoutAnimation  from './src/animation/animation_layout_animation'
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 
-AppRegistry.registerComponent(appName, () => animation_intraction_manager);
+AppRegistry.registerComponent(appName, () => animationLayoutAnimation);
