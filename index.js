@@ -12,7 +12,8 @@ import animation_intraction_manager  from './src/animation/animation_intraction_
 import animationLayoutAnimation  from './src/animation/animation_layout_animation'
 import iffeScreen  from './src/iffe/iffe'
 import Hoc_componentScreen  from './src/high_order_components/highorderComponent'
+import ReduxMainScreen  from './src/redux_with_middleware/Redux_main'
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 
-AppRegistry.registerComponent(appName, () => Hoc_componentScreen);
+AppRegistry.registerComponent(appName, () => ReduxMainScreen);
