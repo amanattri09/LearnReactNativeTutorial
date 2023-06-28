@@ -13,7 +13,8 @@ import animationLayoutAnimation  from './src/animation/animation_layout_animatio
 import iffeScreen  from './src/iffe/iffe'
 import Hoc_componentScreen  from './src/high_order_components/highorderComponent'
 import ReduxMainScreen  from './src/redux_with_middleware/Redux_main'
+import show_image_example  from './src/image_show_example/showImage'
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 
-AppRegistry.registerComponent(appName, () => ReduxMainScreen);
+AppRegistry.registerComponent(appName, () => show_image_example);
