@@ -17,7 +17,8 @@ import show_image_example  from './src/image_show_example/showImage'
 import mapScreen  from './src/mapexample/mapexample'
 import firestore  from './src/firebaseIntegration/firestore'
 import featchLocation  from './src/location_fetch_screen/fetch_location'
+import formScreen  from './src/formExample/form'
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 
-AppRegistry.registerComponent(appName, () => featchLocation);
+AppRegistry.registerComponent(appName, () => formScreen);
