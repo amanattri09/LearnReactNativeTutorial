@@ -19,7 +19,8 @@ import firestore  from './src/firebaseIntegration/firestore'
 import featchLocation  from './src/location_fetch_screen/fetch_location'
 import formScreen  from './src/formExample/form'
 import NativeModuleScreen  from './src/native_module/native_module'
+import LocalizationScreen  from './src/localization/localizationExample'
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 
-AppRegistry.registerComponent(appName, () => NativeModuleScreen);
+AppRegistry.registerComponent(appName, () => LocalizationScreen);
