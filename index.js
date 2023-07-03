@@ -20,7 +20,8 @@ import featchLocation  from './src/location_fetch_screen/fetch_location'
 import formScreen  from './src/formExample/form'
 import NativeModuleScreen  from './src/native_module/native_module'
 import LocalizationScreen  from './src/localization/localizationExample'
+import CompoundComponentScreen  from './src/compoudComponent/index'
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 
-AppRegistry.registerComponent(appName, () => LocalizationScreen);
+AppRegistry.registerComponent(appName, () => CompoundComponentScreen);
