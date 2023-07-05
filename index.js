@@ -21,7 +21,8 @@ import formScreen  from './src/formExample/form'
 import NativeModuleScreen  from './src/native_module/native_module'
 import LocalizationScreen  from './src/localization/localizationExample'
 import CompoundComponentScreen  from './src/compoudComponent/index'
+import TypeScriptScreen  from './src/typescript/hello'
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 
-AppRegistry.registerComponent(appName, () => CompoundComponentScreen);
+AppRegistry.registerComponent(appName, () => TypeScriptScreen);
