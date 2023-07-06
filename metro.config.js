@@ -13,5 +13,8 @@ module.exports = {
         inlineRequires: true,
       },
     }),
+    transformer: {
+      babelTransformerPath: require.resolve("./transformer")
+    }
   },
 };
