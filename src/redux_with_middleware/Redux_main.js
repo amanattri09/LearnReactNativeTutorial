@@ -15,17 +15,17 @@ export default ReduxMainScreen = () => {
 const ChildComponent = () => {
     const posts = useSelector((state) => state.posts)
     const dispatch = useDispatch()
-    const [load,setLoad]=useState(1)
+    const [load, setLoad] = useState(1)
     useEffect(() => {
         dispatch(getPosts())
     }, [load])
     console.log("posts are :" + posts.entities.length)
     return (<SafeAreaView>
         <Text>Loading status is </Text>
-        <Button title="Press me" onPress={()=>{
-              console.log("On button pressed")
-              setLoad(3)
+        <Button title="Press me" onPress={() => {
+            console.log("On button pressed")
+            setLoad(3)
         }}></Button>
-        </SafeAreaView>)
+    </SafeAreaView>)
 }
 
