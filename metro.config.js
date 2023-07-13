@@ -12,9 +12,6 @@ module.exports = {
         experimentalImportSupport: false,
         inlineRequires: true,
       },
-    }),
-    transformer: {
-      babelTransformerPath: require.resolve("./transformer")
-    }
+    })
   },
 };

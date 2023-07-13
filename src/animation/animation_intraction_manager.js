@@ -15,6 +15,7 @@ const useFadeIn = (duration = 10000) => {
 const Ball = ({onShown}) => {
     const opacity = useFadeIn()
     useEffect(()=>{
+        
         const interactionPromise = InteractionManager.runAfterInteractions(()=>{
             onShown()
         })

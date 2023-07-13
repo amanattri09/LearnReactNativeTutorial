@@ -26,4 +26,4 @@ import Call_bind_apply  from './src/call_bind_apply/index'
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 
-AppRegistry.registerComponent(appName, () => Call_bind_apply);
+AppRegistry.registerComponent(appName, () => App);
