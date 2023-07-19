@@ -24,7 +24,9 @@ import CompoundComponentScreen  from './src/compoudComponent/index'
 import TypeScriptScreen  from './src/typescript/hello'
 import Call_bind_apply  from './src/call_bind_apply/index'
 import BootSplash  from './src/splashboot/index'
+import HookForm from './src/react_hook_form/index';
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
+import ReactQuery from './src/reactQuery/index';
 
-AppRegistry.registerComponent(appName, () => BootSplash);
+AppRegistry.registerComponent(appName, () => ReactQuery);

@@ -23,7 +23,7 @@ public class MainActivity extends ReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    RNBootSplash.init(MainActivity.this);
+   // RNBootSplash.init(MainActivity.this);
   }
 
   /**
