@@ -23,7 +23,8 @@ import LocalizationScreen  from './src/localization/localizationExample'
 import CompoundComponentScreen  from './src/compoudComponent/index'
 import TypeScriptScreen  from './src/typescript/hello'
 import Call_bind_apply  from './src/call_bind_apply/index'
+import BootSplash  from './src/splashboot/index'
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => BootSplash);
