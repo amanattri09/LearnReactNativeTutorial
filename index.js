@@ -28,5 +28,6 @@ import HookForm from './src/react_hook_form/index';
 import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 import ReactQuery from './src/reactQuery/index';
+import NavigationGroup from './src/navigationGroup';
 
-AppRegistry.registerComponent(appName, () => ReactQuery);
+AppRegistry.registerComponent(appName, () => NavigationGroup);
