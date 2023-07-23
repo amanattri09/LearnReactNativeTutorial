@@ -29,5 +29,8 @@ import {name as appName} from './app.json';
 import deeplinking from './src/deeplinking/deeplinking';
 import ReactQuery from './src/reactQuery/index';
 import NavigationGroup from './src/navigationGroup';
+import I18Next from './src/i18n';
+import i18n from './src/i18n.config';
+import FlexLearning from './src/flex_learning';
 
-AppRegistry.registerComponent(appName, () => NavigationGroup);
+AppRegistry.registerComponent(appName, () => FlexLearning);
