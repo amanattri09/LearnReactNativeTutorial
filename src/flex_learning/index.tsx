@@ -1,11 +1,12 @@
 import { PropsWithChildren, useState } from "react"
-import { Alert, StyleSheet, Text, View,TouchableOpacity} from "react-native"
+import { Alert, StyleSheet, Text, View,TouchableOpacity, SafeAreaView} from "react-native"
 
 
 export default function FlexLearning() {
     const [flexDirection, setflexDirection] = useState('column')
     return (
-        <PreviewLayout
+       <SafeAreaView style={{flex : 1}}>
+         <PreviewLayout
             label="flexDirection"
             values={['column', 'row', 'row-reverse', 'column-reverse']}
             selectedValue={flexDirection}
@@ -14,6 +15,7 @@ export default function FlexLearning() {
             <View style={[styles.box, { backgroundColor: 'skyblue' }]} />
             <View style={[styles.box, { backgroundColor: 'steelblue' }]} />
         </PreviewLayout>
+       </SafeAreaView>
     )
 }
 
