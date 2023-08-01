@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { SafeAreaView, StyleSheet, Text } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import RNBootSplash from 'react-native-bootsplash';
 import { QueryClientProvider } from "react-query";
 import { QueryClient } from "react-query";
@@ -24,15 +24,25 @@ const ReactQuery = () => {
 
 function ChildComponent() {
     const { data, isLoading, isSuccess, error } = usePosts()
+    const dummyArray = ["aaman", "attri"]
     return (
-        <SafeAreaView>
-            {isLoading && <Text>Loading ......</Text>}
-            {isSuccess && (data.map((item, index) => {
-                return <Text key={index} style={styles.item}>{item.title}</Text>
-            }))}
-            {error && <Text>Something went wrong</Text>}
-        </SafeAreaView>
+        <View>
+            {
+                dummyArray.map((item) => {
+                    return <Text>item</Text>
+                })
+            }
+        </View>
     )
+    // return (
+    //     <SafeAreaView>
+    //         {isLoading && <Text>Loading ......</Text>}
+    //         {isSuccess && (data.map((item, index) => {
+    //                   return <Text key={index} style={styles.item}>{item.title}</Text>
+    //         }))}
+    //         {error && <Text>Something went wrong</Text>}
+    //     </SafeAreaView>
+    // )
 }
 
 const styles = StyleSheet.create({
