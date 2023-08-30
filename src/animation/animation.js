@@ -1,39 +1,55 @@
-import React, { useEffect, useRef } from "react";
-import { Text, View , Animated } from "react-native";
+import {useFocusEffect} from '@react-navigation/native';
+import React, {useEffect, useRef} from 'react';
+import {Text, View, Button, StyleSheet} from 'react-native';
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+} from 'react-native-reanimated';
 
-const FadeInView = (props) => {
-    const fadeAnim = useRef(new Animated.Value(0)).current
-    useEffect(()=>{
-        setTimeout(() => {
-            Animated.timing(fadeAnim,{
-                toValue : 1,
-                duration : 10000,
-                useNativeDriver:true
-            }).start();
-        }, 5000);
-    },[fadeAnim])
-    console.log("fade in view is being animated")
-    return(
-        <Animated.View style={{...props.style,opacity:fadeAnim}}>
-            {props.children}
-        </Animated.View>
-    )
+const FadeInView = props => {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    setTimeout(() => {
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 3000,
+        useNativeDriver: true,
+      }).start();
+    }, 5000);
+  }, [fadeAnim]);
+  return (
+    <Animated.View style={{...props.style, opacity: fadeAnim}}>
+      {props.children}
+    </Animated.View>
+  );
+};
 
-}
+export default AnimDefaultScreen = () => {
+  const offset = useSharedValue(0);
 
-export default animDefault = () => {    
-    return (
-        <View style ={{
-            flex : 1,
-            alignItems : 'center',
-            justifyContent : 'center'
-        }}>
-            <FadeInView style={{width : 250, height:50 , backgroundColor : "powderblue"}}>
-                <Text style={{fontSize:28 , textAlign : 'center' , margin : 10}}>
-                    Fading In 
-                </Text>
-            </FadeInView>
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      transform: [{translateX: offset.value}],
+    };
+  });
 
-        </View>
-    )
-}
+  return (
+    <>
+      <Animated.View style={[styles.box, animatedStyles]} />
+      <View style={{marginTop: 100}}>
+        <Button
+          onPress={() => (offset.value = Math.random() * 255)}
+          title="Move"
+        />
+      </View>
+    </>
+  );
+};
+
+const styles = StyleSheet.create({
+  box: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'red',
+  },
+});

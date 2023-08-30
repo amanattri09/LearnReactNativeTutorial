@@ -1,5 +1,9 @@
 package com.learning_react_native;
 import android.os.Bundle;
+import android.view.WindowManager;
+
+import com.facebook.react.ReactActivityDelegate; 
+import com.zoontek.rnbootsplash.RNBootSplash; 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
@@ -18,7 +22,8 @@ public class MainActivity extends ReactActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(null);
+    super.onCreate(savedInstanceState);
+   // RNBootSplash.init(MainActivity.this);
   }
 
   /**
