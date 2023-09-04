@@ -1,36 +1,66 @@
-import React, {useEffect} from 'react';
-import {Button, Modal, StyleSheet, Text, View} from 'react-native';
+import React, {useEffect, useRef, useState} from 'react';
+import {
+  AppState,
+  AppStateStatus,
+  Button,
+  Modal,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {useAppContext} from './context/AppUpdateContext';
+import {typeUpdate} from './context/useGetMinimumSupportVersion';
 
 interface InAppModalProps {
-  loadingComponent: JSX.Element;
+  loadingComponent?: React.FC;
 }
 
 export default function InAppUpdateModal(
   props: React.PropsWithChildren<InAppModalProps>,
 ) {
-  const {handleGetMinimalAvailableVersion, loading} = useAppContext();
+  const {handleGetMinimalAvailableVersion} = useAppContext();
+  const [hasNewUpdateAvailable, setHasNewUpdateAvailable] =
+    useState<typeUpdate>({hasNewUpdate: true, isForceUpate: true});
+  const appState = useRef(AppState.currentState);
+  const [appStateVisible, setAppStateVisible] = useState(appState.current);
 
   useEffect(() => {
+    console.log('use effect ran for app update check');
     const init = async () => {
-      const version = await handleGetMinimalAvailableVersion();
-      // setMinimumAvailableVersion(version);
+      const result = await handleGetMinimalAvailableVersion();
+      setHasNewUpdateAvailable(result);
     };
     init();
+    const subscription = AppState.addEventListener('change', nextAppState => {
+      if (
+        appState.current.match(/inactive|background/) &&
+        nextAppState === 'active'
+      ) {
+        console.log('App has come to the foreground!');
+      }
+      appState.current = nextAppState;
+      setAppStateVisible(appState.current);
+      console.log('AppState', appState.current);
+    });
+    return () => {
+      subscription.remove();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  if (loading) {
-    return (
-      <Modal animationType="fade" transparent={true}>
+  }, [appStateVisible]);
+  return (
+    <>
+      {props.children}
+      <Modal
+        visible={hasNewUpdateAvailable.hasNewUpdate}
+        animationType="fade"
+        transparent={true}>
         <View style={styles.container}>
           <Text>Bro !! you need to update your app</Text>
           <Button title="Ok Lets do this" />
         </View>
       </Modal>
-    );
-  } else {
-    return props.children;
-  }
+    </>
+  );
 }
 
 const styles = StyleSheet.create({
