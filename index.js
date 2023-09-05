@@ -4,6 +4,6 @@
 import 'react-native-gesture-handler';
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
-import FireStoreExample from './src/firebaseIntegration/firestore';
+import ReactQuery from './src/reactQuery';
 
-AppRegistry.registerComponent(appName, () => FireStoreExample);
+AppRegistry.registerComponent(appName, () => ReactQuery);
